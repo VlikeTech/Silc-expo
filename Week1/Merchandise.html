@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merchandise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <a href="Cart.html" class="cart-link">🛒 Cart</a>
+    <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
+    <h1>Merchandise</h1>
+    <div class="products">
+        <div class="cricket">
+            <div class="emoji">👕</div>
+            <h3>Team India Jersey</h3>
+            <p>Team India jersey for fans</p>
+            <p class="price">$29.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Team India Jersey')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Team India Jersey', price: 29.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <div class="emoji">🧢</div>
+            <h3>Team India Cap</h3>
+            <p>Team India cap for fans</p>
+            <p class="price">$19.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Team India Cap')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Team India Cap', price: 19.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <div class="emoji">🖼️</div>
+            <h3>Team India Posters</h3>
+            <p>Team India posters for fans</p>
+            <p class="price">$39.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Team India Posters')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Team India Posters', price: 39.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cricket">
+            <div class="emoji">🇮🇳</div>
+            <h3>Indian Flag</h3>
+            <p>Indian flag for fans</p>
+            <p class="price">$14.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Indian Flag')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Indian Flag', price: 14.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+</body>
+</html>

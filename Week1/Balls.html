@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balls</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+        <a href="Cart.html" class="cart-link">🛒 Cart</a> 
+        <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
+    <h1>Balls</h1>
+<!-- Red ball -->
+    <div class="products">
+        <div class="cricket">
+            <div class="emoji">🔴</div>
+            <h3>Red ball (1 pc)</h3> 
+            <p>traditional leather, stitched seam, cork core; used in Test cricket (better swing, wears over time)</p>
+            <p class="price">$6</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Red ball (1 pc)')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Red ball (1 pc)', price: 6})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+<!-- White ball -->
+        <div class="cricket">
+            <div class="emoji">⚪</div>
+            <h3>White ball (1 pc) </h3>
+            <p>leather with white finish/coating; used in ODIs and T20s (visibility under floodlights)</p>
+            <p class="price">$6</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('White ball (1 pc)')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'White ball (1 pc)', price: 6})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+<!-- Packs of 6 red balls -->        
+        <div class="cricket">
+            <div class="emoji">🔴</div>
+            <h3>Red ball (6 pcs)</h3> 
+            <p>traditional leather, stitched seam, cork core; used in Test cricket (better swing, wears over time)</p>
+            <p class="price">$30</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Red ball (6 pcs)')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Red ball (6 pcs)', price: 30})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+<!-- Packs of 6 white balls -->        
+        <div class="cricket">
+            <div class="emoji">⚪</div>
+            <h3>White ball (6 pcs)</h3>
+            <p>leather with white finish/coating; used in ODIs and T20s (visibility under floodlights)</p>
+            <p class="price">$30</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('White ball (6 pcs)')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'White ball (6 pcs)', price: 30})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+</body>
+</html>

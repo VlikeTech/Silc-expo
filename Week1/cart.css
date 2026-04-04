@@ -1,0 +1,18 @@
+body{
+    color:black;
+    background-color:white;
+    border:10px blue;
+}
+h1{
+    font-size: 70px;
+    text-align: center;
+}
+    
+a{
+    color:white;
+    font-weight: bold;
+}
+
+strong{
+font-family:cursive;
+}

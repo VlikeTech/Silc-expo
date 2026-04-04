@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pads</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <a href="Cart.html" class="cart-link">🛒 Cart</a>     
+    <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
+    <h1>Pads</h1>
+    <div class="products">
+        <div class="cricket">
+            <h3>Lightweight Standard Pads</h3>
+            <p>Lightweight and durable cricket pads for all levels</p>
+            <p class="price">$49.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Lightweight Standard Pads')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Lightweight Standard Pads', price: 49.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <h3>Lightweight Pro Pads</h3>
+            <p>Advanced lightweight cricket pads for professional players</p>
+            <p class="price">$79.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Lightweight Pro Pads')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Lightweight Pro Pads', price: 79.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <h3>Performance Pads</h3>
+            <p>Performance-oriented cricket pads for serious players</p>
+            <p class="price">$149.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Performance Pads')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Performance Pads', price: 149.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <h3>Lightweight Elite Pads</h3>
+            <p>High-performance lightweight cricket pads</p>
+            <p class="price">$99.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Lightweight Elite Pads')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Lightweight Elite Pads', price: 99.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+</body>
+</html>

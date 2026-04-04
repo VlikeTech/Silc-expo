@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gray-Nicolls Bats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+        <a href="Cart.html" class="cart-link">🛒 Cart</a> 
+        <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
+    <h1>Gray-Nicolls Bats</h1>
+    <div class="products">
+        <div class="cricket" data-name="Gray-Nicolls Lightweight Standard" data-price="49.99">
+            <div class="emoji">🏏</div>
+            <h3>Gray-Nicolls Lightweight Standard</h3>
+            <p>Lightweight and durable cricket bat for all levels</p>
+            <p class="price">$49.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Gray-Nicolls Lightweight Standard')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Gray-Nicolls Lightweight Standard', price: 49.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket" data-name="Gray-Nicolls Lightweight Pro" data-price="79.99">
+            <div class="emoji">🏏</div>
+            <h3>Gray-Nicolls Lightweight Pro</h3>
+            <p>Advanced lightweight cricket bat for professional players</p>
+            <p class="price">$79.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Gray-Nicolls Lightweight Pro')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Gray-Nicolls Lightweight Pro', price: 79.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cricket">
+            <div class="emoji">🏏</div>
+            <h3>Gray-Nicolls Player Edition</h3>
+            <p>Performance-oriented cricket bat for serious players</p>
+            <p class="price">$149.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Gray-Nicolls Player Edition')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Gray-Nicolls Player Edition', price: 149.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket" data-name="Gray-Nicolls Lightweight Elite" data-price="99.99">
+            <div class="emoji">🏏</div>
+            <h3>Gray-Nicolls Lightweight Elite</h3>
+            <p>High-performance lightweight cricket bat</p>
+            <p class="price">$99.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('Gray-Nicolls Lightweight Elite')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'Gray-Nicolls Lightweight Elite', price: 99.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <a href="Bats.html" class="back-to-home">Return to Bats</a>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+    <script src="cart.js"></script>
+</body>
+</html>

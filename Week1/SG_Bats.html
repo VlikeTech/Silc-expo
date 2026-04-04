@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SG Bats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <a href="Cart.html" class="cart-link">🛒 Cart</a>
+    <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
+    <h1>SG Bats</h1>
+    <div class="products">
+        <div class="cricket">
+            <div class="emoji">🏏</div>
+            <h3>SG Lightweight Standard</h3>
+            <p>Lightweight and durable cricket bat for all levels</p>
+            <p class="price">$49.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('SG Lightweight Standard')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'SG Lightweight Standard', price: 49.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cricket">
+            <div class="emoji">🏏</div>
+            <h3>SG Lightweight Pro</h3>
+            <p>Advanced lightweight cricket bat for professional players</p>
+            <p class="price">$79.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('SG Lightweight Pro')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'SG Lightweight Pro', price: 79.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cricket">
+            <div class="emoji">🏏</div>
+            <h3>SG Player Edition</h3>
+            <p>Performance-oriented cricket bat for serious players</p>
+            <p class="price">$149.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('SG Player Edition')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'SG Player Edition', price: 149.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cricket">
+            <div class="emoji">🏏</div>
+            <h3>SG Lightweight Elite</h3>
+            <p>High-performance lightweight cricket bat</p>
+            <p class="price">$99.99</p>
+            <div class="cart-buttons">
+            <button onclick="removeFromCart('SG Lightweight Elite')" class="remove-from-cart" type="button">Remove from Cart</button>
+            <button onclick="addToCart({name: 'SG Lightweight Elite', price: 99.99})" class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <a href="Bats.html" class="back-to-home">Return to Bats</a>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+</body>
+</html>

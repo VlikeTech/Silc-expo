@@ -1,0 +1,117 @@
+body{                                          
+    font-family:Arial, Helvetica, sans-serif ;   
+    background-color:rgb(119, 102, 249);
+    color:rgb(0, 0, 0);
+}
+h1{
+    font-size: 70px;
+    text-align: center;
+}
+    
+a{
+    color:white;
+    font-weight: bold;
+}
+
+strong{
+font-family:cursive;
+}
+
+.products {                                     
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items on first row */
+    gap: 16px;
+    margin: 20px;
+    padding: 0 16px;
+    align-items: start;
+    max-width: 900px;
+}
+
+.cricket{
+color: #e0dbd2;
+background-color: black;
+border:5px ridge orange;
+padding: 25px;
+font-size: 25px;
+margin: 5px;
+width: 300px;
+height: 325px
+}
+p{
+  font-size : 20px;  
+}
+.price{
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+.add-to-cart{
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+	padding:5px 10px;
+    width: 100px;
+    height: 50px;
+    margin:auto;
+    border-radius: 5px;
+}
+.add-to-cart:hover{
+    background-color: darkgreen;
+}
+.remove-from-cart{
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+	padding:5px 10px;
+    width: 100px;
+    height: 50px;
+    margin:auto;
+    border-radius: 5px;
+}
+.remove-from-cart:hover{
+    background-color: darkred;
+}
+.cart-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    max-width: 300px;
+    max-height: fit-content;
+    margin: 5px;
+    padding:1px;
+    align-items: start;
+}
+.back-to-home{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.back-to-home:hover{
+    background-color: #555;
+}
+.cart-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.clear-cart{
+    position: fixed;
+    top: 20px;
+    right: 150px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
