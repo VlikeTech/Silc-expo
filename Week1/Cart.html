@@ -2,23 +2,72 @@
 <html>
     <head>
     <title>Cart</title>
-    <link rel="stylesheet" href="cart.css">
-    
+    <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         
     <h1>Shopping Cart</h1>
-    <div id="cart-items" class="cart-items">
-        <button onclick="clearCart()" class="clear-cart" type="button">Clear Cart</button>
-        <button onclick="checkout()" class="checkout" type="button">Checkout</button>
-        <button onclick="continueShopping()" class="continue-shopping" type="button">Continue Shopping</button>
-        <button onclick="removeFromCart()" class="remove-from-cart" type="button">Remove from Cart</button>
-        
+    
+    <div class="cart-container">
+      <!-- Cart Statistics -->
+      <div id="cart-stats" class="cart-stats">
+        <p><strong>Items in Cart:</strong> <span id="item-count">0</span></p>
+        <p><strong>Cart Total:</strong> <span id="cart-total-display">$0.00</span></p>
+    </div>
 
-        
-        
+      <!-- Cart Items Display -->
+      <div id="cart-items" class="cart-items">
         <!-- Cart items will be dynamically added here -->
     </div>
-    <script src="cart.js"></script>
+
+      <!-- Cart Total -->
+      <div id="cart-total" class="cart-total">
+        <!-- Total price will be displayed here -->
+    </div>
+
+      <!-- Cart Functions/Buttons -->
+      <div id="cart-functions" class="cart-actions">
+        <button onclick="continueShopping()" class="continue-shopping" type="button">Continue Shopping</button>
+        <button onclick="checkout()" class="checkout" type="button">Proceed to Checkout</button>
+        <button onclick="if(confirm('Clear entire cart?')) { clearCart(); renderCart(); }" class="clear-cart" type="button">Clear Cart</button>
+      </div>
+    </div>
+
+    <script src="cart.js" defer></script>
+    <script>
+      // Display item count and total on load
+      function updateCartStats() {
+        const count = window.getCartCount ? window.getCartCount() : 0;
+        const total = window.calculateTotal ? window.calculateTotal() : 0;
+        const countEl = document.getElementById('item-count');
+        const totalEl = document.getElementById('cart-total-display');
+        if (countEl) countEl.textContent = count;
+        if (totalEl) totalEl.textContent = window.formatPrice ? window.formatPrice(total) : '$0.00';
+      }
+
+      // Render cart and update stats on load and when cart updates
+      function renderAndUpdate() {
+        if (window.renderCart) window.renderCart();
+        updateCartStats();
+      }
+
+      // Continue shopping - go back to home
+      window.continueShopping = function() {
+        window.location.href = 'index.html';
+      };
+
+      // Checkout - navigate to checkout page
+      window.checkout = function() {
+        const cartItems = window.getCartItems ? window.getCartItems() : [];
+        if (cartItems.length === 0) {
+          alert('Your cart is empty. Please add items before checking out.');
+          return;
+        }
+        window.location.href = 'checkout.html';
+      };
+
+      document.addEventListener('DOMContentLoaded', renderAndUpdate);
+      window.addEventListener('cartUpdated', renderAndUpdate);
+    </script>
     </body>
 </html>

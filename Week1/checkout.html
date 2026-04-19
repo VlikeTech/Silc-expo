@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    
+    <div class="checkout-container">
+        <!-- Order Number Display -->
+        <div class="order-section">
+            <h2>Order Number</h2>
+            <div class="order-number" id="order-number">SILC-0000000</div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="order-section">
+            <h3>Order Items</h3>
+            <div class="order-items" id="order-items">
+                <!-- Items will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Order Total -->
+        <div class="order-section">
+            <div class="order-total" id="order-total">Total: $0.00</div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            Your order has been placed successfully!
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button class="btn-primary" onclick="continueShopping()" type="button">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="cart.js" defer></script>
+    <script>
+        function displayOrderConfirmation() {
+            const items = window.getCartItems ? window.getCartItems() : [];
+            const total = window.calculateTotal ? window.calculateTotal() : 0;
+            const formatPrice = window.formatPrice ? window.formatPrice : (p) => '$' + Number(p).toFixed(2);
+            
+            // Generate order number
+            const orderNumber = generateOrderNumber();
+            document.getElementById('order-number').textContent = orderNumber;
+            
+            // Display items
+            const itemsContainer = document.getElementById('order-items');
+            if (items.length === 0) {
+                itemsContainer.innerHTML = '<p>No items in order</p>';
+            } else {
+                itemsContainer.innerHTML = '';
+                items.forEach(item => {
+                    const itemHtml = '<div class="order-item">' +
+                        '<span>' + item.name + '</span> - ' +
+                        '<span>' + formatPrice(item.price) + '</span>' +
+                        '</div>';
+                    itemsContainer.innerHTML += itemHtml;
+                });
+            }
+            
+            // Display total
+            document.getElementById('order-total').textContent = 'Total: ' + formatPrice(total);
+            
+            // Store order in localStorage
+            const order = {
+                orderNumber: orderNumber,
+                items: items,
+                total: total,
+                date: new Date().toISOString()
+            };
+            localStorage.setItem('lastOrder', JSON.stringify(order));
+        }
+
+        function generateOrderNumber() {
+            // Generate random 7-digit number
+            const randomNum = Math.floor(Math.random() * 10000000);
+            return 'SILC-' + String(randomNum).padStart(7, '0');
+        }
+
+        function continueShopping() {
+            // Clear the cart after successful order
+            if (window.clearCart) window.clearCart();
+            window.location.href = 'index.html';
+        }
+        
+        document.addEventListener('DOMContentLoaded', displayOrderConfirmation);
+    </script>
+</body>
+</html>
