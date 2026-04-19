@@ -241,7 +241,7 @@ p{
     max-width: 980px;
     margin: 20px auto 40px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.22);
+    background-color: rgba(0, 0, 0, 20%);
     border: 4px ridge orange;
     border-radius: 20px;
 }
@@ -284,10 +284,12 @@ p{
 
 .item-name {
     font-weight: 600;
+    font-size: 25px;
 }
 
 .item-price {
     color: orange;
+    font-size: 20px;
 }
 
 .cart-item span {
