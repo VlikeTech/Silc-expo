@@ -1,4 +1,3 @@
-
 //let cartItems = []; //defining the empty array to store the items in the cart
 let cartItems = JSON.parse(localStorage.getItem('cart') || '[]')
 //function to add items to the cart
