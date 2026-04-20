@@ -33,8 +33,9 @@ font-family:cursive;
     margin: 20px;
     padding: 0 16px;
     align-items: center;
-     max-width: 1200px; 
-}
+    min-width: 1500px;
+} 
+
 
 .cricket{
 color: #ffffff;
@@ -43,7 +44,7 @@ border:5px ridge orange;
 padding: 25px;
 font-size: 25px;
 margin: 5px;
-width: 300px;
+width: 400px;
 height: 325px
 }
 p{
