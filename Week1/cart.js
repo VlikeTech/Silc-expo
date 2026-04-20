@@ -1,5 +1,4 @@
 
-//let cartItems = []; //defining the empty array to store the items in the cart
 let cartItems = JSON.parse(localStorage.getItem('cart') || '[]')
 //function to add items to the cart
 function addToCart({name, price}) 
@@ -53,39 +52,54 @@ function formatPrice(price) {
     return '$' + Number(price || 0).toFixed(2);
 }
 
-// render cart items on the cart page
+// This function shows the cart items on the page
 function renderCart() {
+    // Get the list of things in the cart
     const items = getCartItems();
+
+    // Find the box where we show the cart items
     const container = document.getElementById('cart-items');
+
+    // Find the box where we show the total price
     const totalEl = document.getElementById('cart-total');
-    
-    if (!container) return; // exit if not on cart page
-    
+
+    // If there's no box for items, stop
+    if (!container) return;
+
+    // Clear the box (remove old items)
     container.innerHTML = '';
-    
+
+    // If cart is empty, show a message
     if (items.length === 0) {
         container.innerHTML = '<p>Your cart is empty.</p>';
         if (totalEl) totalEl.innerHTML = '<strong>Total: $0.00</strong>';
         return;
     }
-    
+
+    // For each thing in the cart, make a box to show it
     items.forEach(item => {
+        // Make the HTML for one item
         const html = '<div class="cart-item">' +
+            '<div class="cart-item-info">' +
             '<span class="item-name">' + item.name + '</span>' +
             '<span class="item-price">' + formatPrice(item.price) + '</span>' +
+            '</div>' +
             '<button type="button" onclick="removeFromCart(\'' + item.name + '\'); renderCart();" class="remove-from-cart">Remove</button>' +
             '</div>';
+
+        // Add it to the container
         container.innerHTML += html;
     });
-    
+
+    // Show the total price
     if (totalEl) totalEl.innerHTML = '<strong>Total: ' + formatPrice(calculateTotal()) + '</strong>';
 }
 
-// generate random order number in format SILC-{orderNumber}
 function generateOrderNumber() {
-    const randomNum = Math.floor(Math.random() * 10000000);
-    return 'SILC-' + String(randomNum).padStart(7, '0');
-}
+            // Generate random 4-digit number
+            const randomNum = Math.floor(Math.random() * 10000);
+            return 'SILC-' + String(randomNum).padStart(4, '0');
+        }
 
 // process checkout - create order and clear cart
 function processCheckout() {
@@ -102,7 +116,7 @@ function processCheckout() {
         orderNumber: orderNumber,
         items: items,
         total: total,
-        date: new Date().toISOString()
+        date: new Date().toDateString
     };
     
     // Store order in localStorage
